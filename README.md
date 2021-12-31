@@ -1,7 +1,7 @@
 # web-option
 
-> 一个在 localStorage 中管理页面设置的简单解决方案。
-> A simple solution to manage page settings in localStorage
+> 一个在 localStorage 中管理页面设置的简单解决方案。  
+> A simple solution to manage page settings in localStorage.
 
 ## 注意 | Attention
 - 由于 localStorage 是同步操作的，所以不要储存过大的数据，否则会造成页面卡顿
