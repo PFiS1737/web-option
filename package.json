@@ -3,10 +3,10 @@
     "version": "0.0.1",
     "description": "A simple solution to manage page settings in localStorage.",
     "keywords": [
-        "hexo",
-        "sass",
-        "scss",
-        "renderer"
+        "option",
+        "localStorage",
+        "website",
+        "settings"
     ],
     "main": "index.js",
     "author": "PFiS1737",
