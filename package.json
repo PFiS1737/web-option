@@ -1,0 +1,23 @@
+{
+    "name": "web-option",
+    "version": "0.0.1",
+    "description": "A simple solution to manage page settings in localStorage.",
+    "keywords": [
+        "hexo",
+        "sass",
+        "scss",
+        "renderer"
+    ],
+    "main": "index.js",
+    "author": "PFiS1737",
+    "license":"MIT",
+    "homepage": "https://github.com/PFiS1737/web-option#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PFiS1737/web-option.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PFiS1737/web-option/issues",
+        "email": "pfis1737@qq.com"
+    }
+}

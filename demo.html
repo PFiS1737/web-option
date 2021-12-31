@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEMO</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <script type="module">
+        import { WebOption } from "./index.js"
+        let wo = new WebOption()
+        wo.addItem("mobile-devTool", [false, true], (selected, original) => {
+            console.log("foo -> from", original, "to", selected)
+            if (selected) {
+                let script = document.createElement('script')
+                script.src="//cdn.jsdelivr.net/npm/eruda"
+                document.body.appendChild(script)
+                script.onload = () => eruda.init()
+            }
+        }).addItem("foo", ["foo1", "foo2", "foo3", "foo4","foo5"], (selected, original) => {
+            console.log("foo -> from", original, "to", selected)
+        }).addItem("bar", ["bar1", "bar2", "bar3", "bar4"], (selected, original) => {
+            console.log("bar -> from", original, "to", selected)
+        }).init(initResult => console.log({initResult}))
+        window.wo = wo
+    </script>
+    <div>
+        You can open DevTool (`F12`) to run JavaScript.<br />
+        <br />
+        For mobile user, you can input ` javascript:wo.toggleItemVal("mobile-devTool"); location.reload()` to your url bar, and run it.<br />
+        <br />
+        You can get docs on GitHub: <a href="https://github.com/PFiS1737/web-option" target="_blank">PFiS1737/web-option</a>
+    </div>
+    
+</body>
+
+</html>
