@@ -59,9 +59,10 @@ class OptionItem {
         this.handler = handler
         this.selected = values[0]
         this.original = undefined
+        handler(values[0])
     }
     select(value) {
-        if (this.hasVal(value) || !this.values.size) {
+        if (this.selected !== value && (this.hasVal(value) || !this.values.size)) {
             this.original = this.selected
             this.selected = value
             this.handler(this.selected, this.original)

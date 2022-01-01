@@ -42,7 +42,7 @@
         - values: `Array`  
           设置所有允许的参数
         - handler: `Function(selected, original)`  
-          指定在每次成功更改该设置的值时执行的函数，接受两个参数，分别是刚设置的值和原先的值
+          指定在每次成功更改该设置的值时执行的函数，接受两个参数，分别是刚设置的值和原先的值。在设置完后会自动执行一次，此时仅有一个参数，为传入的 `values` 的第一个元素。
     - 返回值: `WebOption`
 - `WebOption.hasItem(name)`
     - 检测是否有指定名称的设置
@@ -62,7 +62,11 @@
         - name: `string`  
           指定设置名称
         - values: any possible  
-          指定要设置的值，如果该值不在 `addItem` 时设置的 `values` 中，则不会更改，也不报错；如果在设置 `values` 时，将其设为 `[]`，则该函数总是执行成功
+          指定要设置的值，在满足以下条件时设置成功，并执行 `handler`  
+          ```
+          与已选的值不同
+          该值在 `addItem` 时设置的 `values` 中 或 在设置 `values` 时，将其设为 `[]`
+          ```
         - handler: `Function(selected, original)`  
           指定在更改成功时执行的函数，接受两个参数，分别是刚设置的值和原先的值
     - 返回值: `WebOption`
