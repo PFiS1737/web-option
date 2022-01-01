@@ -15,7 +15,7 @@
         import { WebOption } from "./index.js"
         let wo = new WebOption()
         wo.addItem("mobile-devTool", [false, true], (selected, original) => {
-            console.log("foo -> from", original, "to", selected)
+            console.log("mobile-devTool -> from", original, "to", selected)
             if (selected) {
                 let script = document.createElement('script')
                 script.src="//cdn.jsdelivr.net/npm/eruda"
@@ -26,6 +26,8 @@
             console.log("foo -> from", original, "to", selected)
         }).addItem("bar", ["bar1", "bar2", "bar3", "bar4"], (selected, original) => {
             console.log("bar -> from", original, "to", selected)
+        }).addItem("test", [], (selected, original) => {
+            console.log("test -> from", original, "to", selected)
         }).init(initResult => console.log({initResult}))
         window.wo = wo
     </script>

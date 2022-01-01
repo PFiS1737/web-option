@@ -29,13 +29,13 @@
           设置在 `localStorage` 中储存的名称
     - 返回值: `WebOption`
 - `WebOption.init(...handlers)`
-    - 初始化
+    - 初始化（在执行完 `init()` 后将不能再次执行）
     - 参数
         - handlers: `Function(initResult)`  
           设置在初始化结束后执行的函数，接受一个参数，是对 `WebOption.getItemValMap()` 的引用
     - 返回值: `void`
 - `WebOption.addItem(name, values, handler)`
-    - 添加设置
+    - 添加设置（在执行完 `init()` 后将不能再次执行）
     - 参数
         - name: `string`  
           指定设置名称
@@ -62,7 +62,7 @@
         - name: `string`  
           指定设置名称
         - values: any possible  
-          指定要设置的值，如果该值不在 `addItem` 时设置的 `values` 中，则不会更改，也不报错
+          指定要设置的值，如果该值不在 `addItem` 时设置的 `values` 中，则不会更改，也不报错；如果在设置 `values` 时，将其设为 `[]`，则该函数总是执行成功
         - handler: `Function(selected, original)`  
           指定在更改成功时执行的函数，接受两个参数，分别是刚设置的值和原先的值
     - 返回值: `WebOption`
@@ -85,5 +85,5 @@
     - 将设置添加到 localStorage
     - 返回值: `void`
 - `WebOption.getStorage()`
-    - 从 localStorage 读取设置
+    - 从 localStorage 读取设置（在执行完 `init()` 后将不能再次执行）
     - 返回值: `void`
