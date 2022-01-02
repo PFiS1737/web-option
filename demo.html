@@ -24,9 +24,9 @@
             }
         }).addItem("foo", ["foo1", "foo2", "foo3", "foo4","foo5"], (selected, original) => {
             console.log("foo -> from", original, "to", selected)
-        }).addItem("bar", ["bar1", "bar2", "bar3", "bar4"], (selected, original) => {
+        }, "foo5").addItem("bar", ["bar1", "bar2", "bar3", "bar4"], (selected, original) => {
             console.log("bar -> from", original, "to", selected)
-        }).addItem("test", [], (selected, original) => {
+        }, "bar5").addItem("test", [], (selected, original) => {
             console.log("test -> from", original, "to", selected)
         }).init(initResult => console.log({initResult}))
         window.wo = wo

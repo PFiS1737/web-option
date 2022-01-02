@@ -12,8 +12,8 @@ export class WebOption {
         this.getStorage = undefined
         this.init = undefined
     }
-    addItem(name, values, handler) {
-        this.items[name] = new OptionItem(name, values, handler)
+    addItem(name, values, handler, defaultValue) {
+        this.items[name] = new OptionItem(name, values, handler, defaultValue)
         return this
     }
     hasItem(name) {
@@ -53,13 +53,13 @@ export class WebOption {
 }
 
 class OptionItem {
-    constructor(name, values = [], handler = () => {}) {
+    constructor(name, values = [], handler = () => {}, defaultValue) {
         this.name = name
         this.values = new Set(values)
         this.handler = handler
-        this.selected = values[0]
+        this.selected = this.hasVal(defaultValue) ? defaultValue : values[0]
         this.original = undefined
-        handler(values[0])
+        handler(this.selected)
     }
     select(value) {
         if (this.selected !== value && (this.hasVal(value) || !this.values.size)) {
