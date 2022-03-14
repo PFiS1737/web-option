@@ -1,3 +1,8 @@
+# 本项目停止维护
+在我的另一个项目 [mcbece](https://github.com/PFiS1737/mcbece) 中有本项目的[副本](https://github.com/PFiS1737/mcbece/blob/master/public/js/lib/WebOption.class.js)，并会根据需要不断完善修改。
+
+若有需要，可供参考
+
 # web-option
 
 > 一个在 localStorage 中管理页面设置的简单解决方案。  
